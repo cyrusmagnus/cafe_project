@@ -1,0 +1,155 @@
+body
+    background-color: var(--bg-color)
+    font-family: $ff_2
+    font-weight: 400
+    color: var(--text-color)
+
+    &._lock
+        overflow: hidden
+
+    &::-webkit-scrollbar
+        width: 0.9375rem
+        // background-color: $color_2
+
+    &::-webkit-scrollbar-thumb
+        // background-color: $color_3
+
+[class*="__container"]
+    max-width: 1250px
+    margin: 0 auto
+    padding: 0 14px
+
+* img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+/*----General----*/
+
+.header_1,
+.header_2,
+.header_3,
+.header_4,
+.title
+    font-family: $ff_1
+    font-weight: 700
+    line-height: 1.21
+    color: var(--header-color)
+
+.header_1
+    font-size: 56px
+
+.title
+    line-height: 1.5
+
+.text
+    color: var(--text-color)
+    font-size: 16px
+    line-height: 1.75
+    font-weight: 400
+
+.view-btn
+    width: 163px
+    height: 47px
+    border: 1px solid rgba(#FFB577, 0)
+    color: var(--bg-color)
+    background-color: var(--accent-color)
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    gap: 9px
+    font-weight: 500
+    font-size: 16px
+    line-height: 1.5
+    @include trans
+
+    svg
+        @include trans
+        fill: var(--bg-color)
+
+    +hover
+        border: 1px solid rgba(#FFB577, 1)
+        color: var(--accent-color)
+        background-color: var(--bg-color)
+
+        svg
+            fill: var(--accent-color)
+
+    &:active
+        border: 1px solid rgba(#FFB577, 1)
+        color: var(--accent-color)
+        background-color: var(--bg-color)
+
+        svg
+            fill: var(--accent-color)
+        
+.arrow-link
+    width: 20px
+
+.link
+    &:active
+        color: var(--accent-color)
+
+.contact-us
+    display: inline-flex
+    align-items: center
+    gap: 12px
+    background-color: transparent
+    text-decoration: none
+    color: var(--accent-color)
+    font-weight: 500
+    font-size: 16px
+    line-height: 1.5
+    @include trans
+    cursor: pointer
+
+    svg
+        transition: opacity .2s
+
+    &:active
+        color: #fff
+
+    +hover
+        color: #fff
+        
+        svg
+            opacity: 0
+            
+        
+.scroll
+    position: fixed
+    bottom: 72px
+    right: 20px
+    width: 30px
+    height: 30px
+    background-color: transparent
+    border: none
+    // border-top: 10px solid $color_4
+    // border-right: 10px solid $color_4
+    transform: rotate(-45deg)
+    opacity: 0
+    transition: all .2s
+    z-index: 1
+
+    +small
+        width: 30px
+        height: 30px
+        right: 2%
+
+    // .scroll__img
+    //     display: inline-flex
+    //     width: 50px
+    //     height: 50px
+    //     fill: $color_4
+    //     transform: rotate(-90deg)
+    //     transition: all .2s
+    //     cursor: pointer
+
+    &:hover
+        transform: translateY(-4px) rotate(-45deg) 
+
+    &.active
+        opacity: 1
+
+/*----General----*/
+    

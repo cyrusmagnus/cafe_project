@@ -1,0 +1,18 @@
+$ff_1: 'Playfair Display', sans-serif
+$ff_2: 'Poppins', sans-serif
+
+:root
+    --bg-color: #19161B
+    --accent-bg-color: #1F1D21
+    --accent-color: #FFB577
+    --text-color: #B8B8B8
+    --header-color: rgba(255,255,255, 0.87)
+
+
+@mixin hover
+    @media (any-hover: hover)
+        &:hover
+            @content
+
+@mixin trans
+    transition: color .2s, opacity .2s, background-color .2s

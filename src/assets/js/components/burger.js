@@ -1,6 +1,6 @@
 const burger = document.querySelector('.menu-icon');
 const menu = document.querySelector('.menu');
-const body = document.querySelector.body;
+const body = document.body;
 
 if (burger && menu) {
     burger.addEventListener('click', () => {

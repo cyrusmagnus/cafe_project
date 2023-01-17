@@ -13,8 +13,11 @@ const uglify = require("gulp-uglify");
 const plumber = require("gulp-plumber");
 const panini = require("panini");
 const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const newer = require("gulp-newer");
 const del = require("del");
 const notify = require("gulp-notify");
+const svgSprite = require("gulp-svg-sprite");
 const browserSync = require("browser-sync").create();
 
 
@@ -27,7 +30,7 @@ const path = {
         html: distPath,
         css: distPath + "assets/css/",
         js: distPath + "assets/js/",
-        svg: distPath + "assets/images/icons/",
+        // svg: distPath + "assets/images/icons/",
         images: distPath + "assets/images/",
         fonts: distPath + "assets/fonts/"
     },
@@ -35,16 +38,16 @@ const path = {
         html: srcPath + "*.html",
         css: srcPath + "assets/sass/*.sass",
         js: srcPath + "assets/js/*.js",
-        svg: srcPath + "assets/images/icons/**/*.svg",
-        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,svg,webp,webmanifest,xml,json}",
+        // svg: srcPath + "assets/images/icons/*.svg",
         fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
         html: srcPath + "**/*.html",
         css: srcPath + "assets/sass/**/*.sass",
         js: srcPath + "assets/js/**/*.js",
-        svg: srcPath + "assets/images/icons/**/*.svg",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        // svg: srcPath + "assets/images/icons/*.svg",
         fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -131,11 +134,16 @@ function js() {
 
 function images() {
     return src(path.src.images, {base: srcPath  + "assets/images/"})
+        .pipe(newer(path.build.images))
+        .pipe(webp())
+        .pipe(dest(path.build.images))
+        .pipe(src(path.src.images))
+        .pipe(newer(path.build.images))
         .pipe(imagemin(
             [
                 imagemin.gifsicle({interlaced: true}),
                 imagemin.mozjpeg({quality: 75, progressive: true}),
-                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.optipng({optimizationLevel: 5}), // 0 to 7
                 imagemin.svgo({
                     plugins: [
                         {removeViewBox: true},
@@ -145,6 +153,8 @@ function images() {
             ]
         ))
         .pipe(dest(path.build.images))
+        // .pipe(src(path.src.svg))
+        // .pipe(dest(path.build.svg))
         .pipe(browserSync.reload({stream: true}));
 }
 

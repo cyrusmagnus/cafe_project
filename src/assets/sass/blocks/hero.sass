@@ -3,17 +3,21 @@
     // .hero__container
 
     &__container
-        padding-top: 96px
-        padding-bottom: 160px
+        padding-top: clamp(1.875rem, 0.497rem + 6.89vw, 6rem)
+        padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)
         display: flex
         align-items: center
         justify-content: space-between
-        gap: 32px
+        gap: clamp(1.25rem, -1.34rem + 4.18vw, 2rem)
 
     // .hero__content
 
     &__content
         flex-basis: 624px
+
+        +max(767px)
+            flex-basis: 100%
+
 
     // .hero__text
 
@@ -39,6 +43,12 @@
 
     &__img
         flex-basis: 622px
+
+        +max(1200px)
+            flex-basis: 40%
+
+        +max(991px)
+            display: none
 
 .header_1     
     margin-bottom: 16px

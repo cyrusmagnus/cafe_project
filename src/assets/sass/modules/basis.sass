@@ -26,21 +26,48 @@ body
 
 /*----General----*/
 
-.header_1,
-.header_2,
-.header_3,
-.header_4,
-.title
+.header-1,
+.header-2,
+.header-3,
+.header-4,
+[class*="__title"]
     font-family: $ff_1
     font-weight: 700
     line-height: 1.21
     color: var(--header-color)
 
-.header_1
+.header-1
     font-size: clamp(2.25rem, 1.832rem + 2.09vw, 3.5rem)
+
+.header-2
+    font-size: clamp(2rem, 1.666rem + 1.67vw, 3rem)
+
+.header-3
+    font-size: 32px
 
 .title
     line-height: 1.5
+
+.block-name
+    font-family: $ff_1
+    font-weight: 400
+    font-size: 16px
+    line-height: 1.5
+    text-transform: uppercase
+    color: var(--accent-color)
+    display: inline-block
+    margin-bottom: 24px
+    position: relative
+
+    &::after
+        position: absolute
+        top: 50%
+        // transform: translateY(-50%)
+        margin-left: 16px
+        content: ""
+        width: 48px
+        height: 1px
+        background-color: #fff
 
 .text
     color: var(--text-color)
@@ -115,7 +142,56 @@ body
         svg
             opacity: 0
             
-        
+.double-picture
+    display: flex
+    flex-basis: 548px
+    gap: clamp(0.5rem, -16.096rem + 26.79vw, 4rem)
+    position: relative
+
+    // .double-picture__one
+
+    &__one
+        width: 240px
+        max-height: 500px
+        padding-top: 82px
+
+    // .double-picture__two
+
+    &__two
+        width: 240px
+        max-height: 500px
+        padding-bottom: 82px
+
+    +between(991px, 1200px)
+
+        &__one
+            width: calc(50% - 14px)
+            padding-top: clamp(1.5rem, -15.688rem + 27.75vw, 5.125rem)
+
+        &__two
+            width: calc(50% - 14px)
+            padding-bottom: clamp(1.5rem, -15.688rem + 27.75vw, 5.125rem)
+
+    +max(991px)
+        gap: clamp(0.5rem, -1.462rem + 9.81vw, 6.375rem)
+        justify-content: center
+        padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)
+
+        &__one
+            padding-top: clamp(0.75rem, -1.336rem + 10.43vw, 5.125rem)
+
+        &__two
+            padding-bottom: clamp(0.75rem, -1.336rem + 10.43vw, 5.125rem)
+
+    +max(520px)
+        &__one
+            width: calc(50% - 14px)
+            // padding-top: clamp(1.375rem, -0.413rem + 8.94vw, 5.125rem)
+
+        &__two
+            width: calc(50% - 14px)
+            // padding-bottom: clamp(1.375rem, -0.413rem + 8.94vw, 5.125rem)
+
 .scroll
     position: fixed
     bottom: 72px

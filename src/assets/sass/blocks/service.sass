@@ -1,0 +1,146 @@
+.service
+    padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)
+
+    // .service__container
+
+    &__container
+        
+
+    // .service__content
+
+    &__content
+        
+
+    // .service__subtitle
+
+    &__subtitle
+        
+
+    // .service__inner-header
+
+    &__inner-header
+        display: flex
+        gap: clamp(0.75rem, -9.177rem + 16.03vw, 3.625rem)
+        
+        +max(767px)
+            gap: 30px
+            flex-direction: column
+
+
+    // .service__title
+
+    &__title
+        flex-basis: 660px
+        margin-bottom: 64px
+
+        +max(767px)
+            margin-bottom: 0
+            flex-basis: 100%
+
+    // .service__text
+
+    &__text
+        flex-basis: 550px
+
+        +max(767px)
+            flex-basis: 100%
+            margin-bottom: 30px
+
+    // .service__menu
+
+    &__menu
+            
+
+.block-name
+    
+.header-2
+    
+.text
+    
+.menu-service
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+
+    +max(991px)
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(1, 1fr) 
+
+    +max(767px)
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(3, 1fr)
+
+    // .menu-service__box
+
+    &__box
+        display: grid
+        grid-template-rows: 1fr 1fr
+        background-color: rgba(0, 0, 0, 0.16)
+
+        &:nth-child(2)
+            border-left: 1px solid rgba(255, 255, 255, 0.06)
+            border-right: 1px solid rgba(255, 255, 255, 0.06)
+
+        +max(991px)
+            grid-template-rows: 1fr
+
+            &:nth-child(1)
+                grid-template-columns: 1fr 1fr
+                grid-template-rows: 1fr
+                grid-area: 1 / 1 / 2 / 3
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+
+            &:nth-child(2)
+                border-left: none
+                grid-area: 2 / 1 / 3 / 2
+
+            &:nth-child(3)
+                grid-area: 2 / 2 / 3 / 3
+        
+        +max(767px)
+
+            &:nth-child(1)
+                grid-template-columns: 1fr
+                grid-area: 1 / 1 / 2 / 2
+                border-bottom: none
+
+            &:nth-child(2)
+                border-left: none
+                border-right: none
+                border-left: none
+                grid-area: 2 / 1 / 3 / 2
+
+            &:nth-child(3)
+                grid-area: 3 / 1 / 4 / 2
+
+    // .menu-service__item
+
+    &__item
+        padding: clamp(1.563rem, -6.854rem + 13.59vw, 4rem)
+
+        +max(767px)
+            border-top: 1px solid rgba(255, 255, 255, 0.06)
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+    // .menu-service__icon
+
+    &__icon
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 48px
+        height: 48px
+        background-color: rgba(255, 181, 119, 0.07)
+        border-radius: 50%
+        margin-bottom: 24px
+        
+
+    // .menu-service__title
+
+    &__title
+        margin-bottom: 12px
+        font-size: 32px
+
+    // .menu-service__text
+
+    &__text
+        
+

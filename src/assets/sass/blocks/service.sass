@@ -1,5 +1,5 @@
 .service
-    padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)
+    padding-bottom: clamp(2.5rem, -0.005rem + 12.53vw, 10rem)
 
     // .service__container
 
@@ -20,9 +20,10 @@
 
     &__inner-header
         display: flex
-        gap: clamp(0.75rem, -9.177rem + 16.03vw, 3.625rem)
+        justify-content: space-between
+        // gap: clamp(0.75rem, -9.177rem + 16.03vw, 3.625rem)
         
-        +max(767px)
+        +max(991px)
             gap: 30px
             flex-direction: column
 
@@ -33,7 +34,7 @@
         flex-basis: 660px
         margin-bottom: 64px
 
-        +max(767px)
+        +max(991px)
             margin-bottom: 0
             flex-basis: 100%
 
@@ -42,7 +43,7 @@
     &__text
         flex-basis: 550px
 
-        +max(767px)
+        +max(991px)
             flex-basis: 100%
             margin-bottom: 30px
 

@@ -1,21 +1,24 @@
 .hero
+    padding-bottom: clamp(2.5rem, -0.005rem + 12.53vw, 10rem)
 
     // .hero__container
 
     &__container
         padding-top: clamp(1.875rem, 0.497rem + 6.89vw, 6rem)
-        padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)
         display: flex
         align-items: center
         justify-content: space-between
         gap: clamp(1.25rem, -1.34rem + 4.18vw, 2rem)
+
+        +max(767px)
+            padding-top: 0
 
     // .hero__content
 
     &__content
         flex-basis: 624px
 
-        +max(767px)
+        +max(991px)
             flex-basis: 100%
 
 
@@ -50,13 +53,22 @@
             display: none
 
     .info
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+        +max(991px)
+            flex-direction: row
+            justify-content: center
+            // gap: 0
+            // justify-content: space-between
 
         // .info__item
 
         &__item
-            &:not(:first-child)
-                margin-top: 16px
-
+            +max(991px)
+                max-width: 260px
+            
         // .info__title
 
         &__title

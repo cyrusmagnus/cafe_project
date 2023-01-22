@@ -60,6 +60,7 @@ body
     position: relative
 
     &::after
+        overflow: visible
         position: absolute
         top: 50%
         // transform: translateY(-50%)
@@ -93,6 +94,9 @@ body
     svg
         @include trans
         fill: var(--bg-color)
+    
+    >&::after
+        display: none
 
     +hover
         border: 1px solid rgba(#FFB577, 1)
@@ -152,14 +156,14 @@ body
 
     &__one
         width: 240px
-        max-height: 500px
+        max-height: clamp(21.875rem, 17.404rem + 22.35vw, 31.25rem)
         padding-top: 82px
 
     // .double-picture__two
 
     &__two
         width: 240px
-        max-height: 500px
+        max-height: clamp(21.875rem, 17.404rem + 22.35vw, 31.25rem)
         padding-bottom: 82px
 
     +between(991px, 1200px)
@@ -173,6 +177,7 @@ body
             padding-bottom: clamp(1.5rem, -15.688rem + 27.75vw, 5.125rem)
 
     +max(991px)
+        flex-basis: 100%
         gap: clamp(0.5rem, -1.462rem + 9.81vw, 6.375rem)
         justify-content: center
         padding-bottom: clamp(1.875rem, -0.839rem + 13.57vw, 10rem)

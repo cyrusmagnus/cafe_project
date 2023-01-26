@@ -54,8 +54,8 @@ function serve() {
         server: {
             baseDir: "./" + distPath
         },
-        browser: 'firefox',
-        notify: false
+        // browser: 'firefox',
+        // notify: false
     });
 }
 

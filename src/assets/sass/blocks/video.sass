@@ -1,18 +1,24 @@
 .video
     padding-bottom: clamp(2.5rem, -0.005rem + 12.53vw, 10rem)
-    background-color: var(--accent-bg-color)
-    position: relative
+    // position: relative
     
 
     // .video__container
 
     &__container
+        max-width: 1584px
+        padding: 0
+        background-color: var(--accent-bg-color)
         display: flex
 
     // .video__content
 
     &__content
-        padding: 80px 0 84px
+        flex-basis: 674px
+        padding-top: clamp(1.875rem, 0.894rem + 4.91vw, 5.75rem)
+        padding-right: clamp(1.875rem, 0.873rem + 5.01vw, 4.875rem)
+        padding-bottom: clamp(1.875rem, 0.748rem + 5.64vw, 5.25rem)
+        padding-left: clamp(0.875rem, -37.235rem + 47.71vw, 10rem)
 
     // .video__quotes
 
@@ -20,11 +26,16 @@
         display: inline-block
         width: 34px
         height: 35px
+        margin-bottom: 42px
 
     // .video__text
 
     &__text
-        
+        font-family: $ff_1
+        font-weight: 500
+        font-size: clamp(1.125rem, 0.903rem + 1.11vw, 2rem)
+        line-height: 1.5
+        margin-bottom: clamp(1.875rem, 1.082rem + 3.97vw, 4.25rem)
 
     // .video__humen
 
@@ -34,42 +45,75 @@
     // .video__frame
 
     &__frame
-        position: absolute
+        min-width: 57%
+        position: relative
         right: 0
         bottom: 0
         // left: 0
         top: 0
-        min-width: 925px
+        // max-width: 925px
+        
 
-        &__iframe
-            
+    &__icon
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: inline-block
+        width: 60px
+        height: 60px
+        background-color: transparent
+        border: none
 
+        svg
             width: 100%
             height: 100%
 
-            
 .humen-info
-
+    position: relative
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid rgba(255,255,255, .24)
+    padding-bottom: 22px
+    
     // .humen-info__name-wrapper
 
     &__name-wrapper
-        
+        display: flex
+        flex-direction: column
+        gap: 4px
+        flex-basis: 260px
 
     // .humen-info__name
 
     &__name
-        
+        font-weight: 500
+        font-size: 16px
+        color: var(--header-color)
 
     // .humen-info__from
 
     &__from
-        
+        color: rgba(255, 255, 255, .6)
+        font-size: 12px
+        line-height: 1.3
 
     // .humen-info__img
 
     &__images
         width: 48px
         height: 48px
+        
+    &__line
+        content: ''
+        background-color: #fff
+        width: 48px
+        height: 2px
+        position: absolute
+        bottom: 0px
+        right: 0
+            
+            
 
     &__img
     
